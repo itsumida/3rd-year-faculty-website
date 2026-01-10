@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-kurs Umumiy fakultet - O'quv materiallari</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>3-kurs Umumiy fakultet</h1>
+            <p class="subtitle">O'quv materiallari platformasi</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Darslarni qidirish..." />
+            <button id="clearSearch">×</button>
+        </div>
+
+        <!-- Semester Navigation -->
+        <div class="semester-tabs">
+            <button class="semester-tab" data-semester="1">1-semestr</button>
+            <button class="semester-tab active" data-semester="2">2-semestr</button>
+        </div>
+
+        <!-- Semester 1 Content -->
+        <div id="semester-1" class="semester-content">
+            <div class="empty-state">
+                <p>Bu semestr uchun hozircha materiallar yuklanmagan</p>
+            </div>
+        </div>
+
+        <!-- Semester 2 Content -->
+        <div id="semester-2" class="semester-content active">
+            <div id="lessonsContainer" class="lessons-grid">
+                <!-- Lessons will be dynamically loaded here -->
+            </div>
+            <div id="noResults" class="empty-state" style="display: none;">
+                <p>Hech qanday dars topilmadi</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lesson Modal -->
+    <div id="lessonModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="close-btn" id="closeModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="progress-indicator">
+                    <span id="progressText"></span>
+                    <button id="markComplete" class="btn-secondary">Tugatildi deb belgilash</button>
+                </div>
+
+                <div class="materials-list">
+                    <a class="material-item" id="theoryLink" target="_blank">
+                        <span class="material-icon">📄</span>
+                        <span class="material-name">Nazariya</span>
+                        <span class="material-type">PDF</span>
+                    </a>
+
+                    <a class="material-item" id="videoLink" target="_blank">
+                        <span class="material-icon">🎥</span>
+                        <span class="material-name">Video dars</span>
+                        <span class="material-type">YouTube</span>
+                    </a>
+
+                    <a class="material-item" id="testsLink" target="_blank">
+                        <span class="material-icon">✍️</span>
+                        <span class="material-name">Testlar</span>
+                        <span class="material-type">PDF</span>
+                    </a>
+
+                    <a class="material-item" id="presentationLink" target="_blank">
+                        <span class="material-icon">📊</span>
+                        <span class="material-name">Taqdimot</span>
+                        <span class="material-type">PPTX</span>
+                    </a>
+
+                    <a class="material-item" id="additionalLink" target="_blank">
+                        <span class="material-icon">📚</span>
+                        <span class="material-name">Qo'shimcha materiallar</span>
+                        <span class="material-type">PDF</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 3-kurs Umumiy fakultet | Open Source</p>
+            <p><a href="https://github.com" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material - 3-kurs Umumiy fakultet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .viewer-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .viewer-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+        }
+
+        .viewer-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .viewer-title {
+            flex: 1;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .download-button:hover {
+            background: #229954;
+            transform: translateY(-2px);
+        }
+
+        .viewer-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-color);
+        }
+
+        .iframe-container {
+            flex: 1;
+            display: flex;
+            position: relative;
+            background: white;
+            min-height: calc(100vh - 180px);
+        }
+
+        .material-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            min-height: 600px;
+        }
+
+        .material-iframe.video {
+            aspect-ratio: 16 / 9;
+            height: auto;
+            max-width: 1200px;
+            margin: 2rem auto;
+            display: block;
+        }
+
+        .folder-view {
+            display: none;
+            width: 100%;
+            padding: 2rem;
+            background: var(--bg-color);
+        }
+
+        .folder-view.active {
+            display: block;
+        }
+
+        .folder-embed {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .folder-embed iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* Hide Google Drive metadata */
+        .folder-embed {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Try to hide bottom metadata bar in iframe */
+        .folder-embed iframe {
+            margin-bottom: -50px;
+            height: 650px;
+        }
+
+        .loading-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-color);
+            border-top-color: var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .error-message h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .alternative-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .viewer-header .container {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .viewer-title {
+                order: -1;
+                width: 100%;
+                text-align: left;
+                font-size: 1rem;
+            }
+
+            .back-button,
+            .download-button {
+                font-size: 0.875rem;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body class="viewer-container">
+    <div class="viewer-header">
+        <div class="container">
+            <a href="index.html" class="back-button">
+                <span>←</span>
+                <span>Orqaga</span>
+            </a>
+            <div class="viewer-title" id="materialTitle">Yuklanmoqda...</div>
+            <a href="#" class="download-button" id="downloadLink" target="_blank">
+                <span>📥</span>
+                <span>Yuklab olish</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="viewer-content">
+        <div class="iframe-container">
+            <div class="loading-message" id="loadingMessage">
+                <div class="loading-spinner"></div>
+                <p>Material yuklanmoqda...</p>
+            </div>
+            <iframe id="materialFrame" class="material-iframe" style="display: none;"></iframe>
+            <div class="error-message" id="errorMessage">
+                <h3 id="errorTitle">Material yuklanmadi</h3>
+                <p id="errorText">Material to'g'ridan-to'g'ri ochilmadi. Quyidagi tugma orqali ochishingiz mumkin:</p>
+                <div class="alternative-links">
+                    <a href="#" id="openInDrive" class="btn-primary" target="_blank">
+                        <span id="openButtonText">Google Drive da ochish</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="folder-view" id="folderView">
+            <div class="folder-embed">
+                <iframe id="folderFrame"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const lessonId = parseInt(urlParams.get('lesson'));
+        const materialType = urlParams.get('type');
+
+        // Find the lesson
+        const lesson = lessonsData.find(l => l.id === lessonId);
+
+        if (!lesson || !materialType) {
+            window.location.href = 'index.html';
+        }
+
+        // Material type names in Uzbek
+        const materialNames = {
+            theory: 'Nazariya',
+            video: 'Video dars',
+            tests: 'Testlar',
+            presentation: 'Taqdimot',
+            additional: 'Qo\'shimcha materiallar'
+        };
+
+        // Get material URL
+        const materialUrl = lesson.materials[materialType];
+
+        // Update page title
+        document.title = `${lesson.title} - ${materialNames[materialType]}`;
+        document.getElementById('materialTitle').textContent = `${lesson.title} - ${materialNames[materialType]}`;
+
+        // Set download link
+        document.getElementById('downloadLink').href = materialUrl;
+        document.getElementById('openInDrive').href = materialUrl;
+
+        // Function to get embeddable URL
+        function getEmbedUrl(url, type) {
+            if (type === 'video') {
+                // Skip if no video
+                if (!url || url === '#') {
+                    return null;
+                }
+                // YouTube embed - handle both youtu.be and youtube.com formats
+                let videoId = null;
+                if (url.includes('youtu.be/')) {
+                    videoId = url.match(/youtu\.be\/([^\?&]+)/);
+                } else if (url.includes('youtube.com/watch')) {
+                    videoId = url.match(/[?&]v=([^&]+)/);
+                }
+
+                if (videoId && videoId[1]) {
+                    return { type: 'video', url: `https://www.youtube.com/embed/${videoId[1]}` };
+                }
+                return null;
+            } else {
+                // Google Drive embed
+                if (url.includes('drive.google.com')) {
+                    // Check if it's a folder or file
+                    if (url.includes('/folders/')) {
+                        // Extract folder ID and create embed URL
+                        const folderId = url.match(/\/folders\/([^\?\/]+)/);
+                        if (folderId) {
+                            return {
+                                type: 'folder',
+                                url: `https://drive.google.com/embeddedfolderview?id=${folderId[1]}#list`
+                            };
+                        }
+                        return null;
+                    } else if (url.includes('/file/d/')) {
+                        // Extract file ID and create embed URL
+                        const fileId = url.match(/\/file\/d\/([^\/]+)/);
+                        if (fileId) {
+                            return {
+                                type: 'file',
+                                url: `https://drive.google.com/file/d/${fileId[1]}/preview`
+                            };
+                        }
+                    }
+                }
+                return null;
+            }
+        }
+
+        // Load material
+        const iframe = document.getElementById('materialFrame');
+        const folderFrame = document.getElementById('folderFrame');
+        const loadingMessage = document.getElementById('loadingMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const folderView = document.getElementById('folderView');
+        const iframeContainer = document.querySelector('.iframe-container');
+        const errorTitle = document.getElementById('errorTitle');
+        const errorText = document.getElementById('errorText');
+        const openButtonText = document.getElementById('openButtonText');
+
+        const embedResult = getEmbedUrl(materialUrl, materialType);
+
+        if (embedResult) {
+            if (embedResult.type === 'folder') {
+                // Show folder view
+                loadingMessage.style.display = 'none';
+                iframeContainer.style.display = 'none';
+                folderView.classList.add('active');
+                folderFrame.src = embedResult.url;
+            } else {
+                // Load file/video in iframe
+                iframe.src = embedResult.url;
+
+                // Add video class for YouTube videos
+                if (embedResult.type === 'video') {
+                    iframe.classList.add('video');
+
+                    // Update error message for videos
+                    errorTitle.textContent = 'Video ko\'rsatilmadi';
+                    errorText.textContent = 'Video ichki oynada ochilmadi (YouTube embedding cheklangan bo\'lishi mumkin). Quyidagi tugma orqali YouTube da ochishingiz mumkin:';
+                    openButtonText.textContent = 'YouTube da ochish';
+                }
+
+                iframe.onload = function() {
+                    loadingMessage.style.display = 'none';
+                    iframe.style.display = 'block';
+                };
+
+                iframe.onerror = function() {
+                    loadingMessage.style.display = 'none';
+                    errorMessage.style.display = 'block';
+                };
+
+                // Fallback timeout - shorter for videos
+                // For videos, if still loading after timeout, assume embedding is blocked
+                setTimeout(() => {
+                    if (iframe.style.display === 'none') {
+                        if (embedResult.type === 'video') {
+                            // Show error message for videos that fail to embed
+                            loadingMessage.style.display = 'none';
+                            errorMessage.style.display = 'block';
+                        } else {
+                            // For files, try to show anyway
+                            loadingMessage.style.display = 'none';
+                            iframe.style.display = 'block';
+                        }
+                    }
+                }, embedResult.type === 'video' ? 2000 : 3000);
+            }
+        } else {
+            // Can't embed, show error with direct link
+            loadingMessage.style.display = 'none';
+            errorMessage.style.display = 'block';
+
+            // Update error message based on material type
+            if (materialType === 'video') {
+                errorTitle.textContent = 'Video mavjud emas';
+                errorText.textContent = 'Bu dars uchun video hali yuklanmagan.';
+                document.getElementById('openInDrive').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
