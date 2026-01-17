@@ -7,7 +7,7 @@ const lessonsData = [
         title: "1-dars",
         description: "Birinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1xvjOB43AhKn8ZNiUzJiVD7iOR1bl6Nzj?usp=sharing",
+            theory: "https://drive.google.com/file/d/1duaVJVxCRIC-594ntxKwg-sAdWAk8l4h/view?usp=sharing",
             video: "https://youtu.be/fl3ou16C1X4",
             tests: "https://drive.google.com/drive/folders/1gA33s4uFnhiEP_ZX0XXkzKnIJTGuwlqT?usp=drive_link",
             presentation: "https://drive.google.com/drive/folders/1paoEPAhTDVo4MmHQyuErQntjw-Evy_DM?usp=sharing",
@@ -19,10 +19,10 @@ const lessonsData = [
         title: "2-dars",
         description: "Ikkinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1s3buqLtdzPdn9-9Ll68TP3DBo2Tj0StB?usp=sharing",
+            theory: "https://drive.google.com/file/d/1fZH4b-ZdLVoX1lh8Q931MF2aoTkq6r9k/view?usp=sharing",
             video: "https://youtu.be/jDCLbiiQtAo",
-            tests: "https://drive.google.com/drive/folders/12aQVkmlFCHiRFlROALEXhKa3I6frjd_u?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/1LV_qr68gv_gAWwrZEnsK_EcKSOrsHJB4?usp=sharing",
+            tests: "https://drive.google.com/file/d/1Pn8RtHVAywZgrvbIqG-5F_vM86KBSu7T/view?usp=sharing",
+            presentation: "https://drive.google.com/file/d/1aM-2N1A5MKJPEffmMOZu1xUlO_FieL5w/view?usp=sharing",
             additional: "https://drive.google.com/drive/folders/14u5HwZ0_Pmht0KxVVJgLcHKJgJWnobgU?usp=drive_link"
         }
     },
@@ -32,9 +32,9 @@ const lessonsData = [
         description: "Uchinchi dars materiallari",
         materials: {
             theory: "https://drive.google.com/drive/folders/1zfTwlaPOBte7gzk_NrmpdtSzRCgEkePS?usp=sharing",
-            video: "#",
+            video: "https://www.youtube.com/watch?v=dEyuHa4U3BY&t=15s",
             tests: "https://drive.google.com/drive/folders/104lXvBqYUEolSgkjjPWhS1i-T4F8cfZ_?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/1ShHRrb5m_jFtWF1laZMcZ1hqNlZqtWhg?usp=sharing",
+            presentation: "https://drive.google.com/file/d/1x1zC9sxZcxmBH0wndyy1Gp6ehUyDAAce/view?usp=sharing",
             additional: "https://drive.google.com/drive/folders/1Q8y5qjj36LBkoV15GOpDfWI8ZGi3rdV0?usp=drive_link"
         }
     },
@@ -43,11 +43,11 @@ const lessonsData = [
         title: "4-dars",
         description: "To'rtinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1o2hMp5Ytk23Vk5_ku5NZlYYAURP2PW9B?usp=sharing",
+            theory: "https://drive.google.com/file/d/1Lex_BzSbcQ3V5pykAJyh2jz4jJ8-ACPu/view?usp=sharing",
             video: "https://youtu.be/lZJFl3Ws3NU",
-            tests: "https://drive.google.com/drive/folders/1QH3C-KrFZpZ_YY4GbzNt7fuTPMKyIsrC?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/1ZywRD1FHoCika_LacxuCZAAMj7GRqRoN?usp=sharing",
-            additional: "https://drive.google.com/drive/folders/1ELA72cV3WJe8k3Ba2s1rV0GxFD7hHI1K?usp=drive_link"
+            tests: "https://drive.google.com/file/d/1J2xjOa1r9X_Qcb8NHZsmS-YaPie0phAl/view?usp=sharing",
+            presentation: "https://drive.google.com/file/d/1XnJ94F34yCL665KDyAJDn1F8VXFdg-Zh/view?usp=sharing",
+            additional: "https://drive.google.com/file/d/1utBVj2eEs70a016Y0-5hEOu8o7O94os0/view?usp=sharing"
         }
     },
     {
@@ -55,10 +55,10 @@ const lessonsData = [
         title: "5-dars",
         description: "Beshinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1taitCvlHUcLFxIdJh0EuHBFew354b-TL?usp=sharing",
+            theory: "https://drive.google.com/file/d/1l9NOAVJ6C6K92xKUnKm4cAAcwnsddTpR/view?usp=sharing",
             video: "https://youtu.be/4_1N-v-lzh0",
             tests: "https://drive.google.com/drive/folders/12lbP7uJeSEv-MmVH9nMfzRTOWux0Wj8M?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/1y_TzLbEo7f4V0g1EyN4589e82wOSH7CW?usp=sharing",
+            presentation: "https://drive.google.com/file/d/17BQM-PpQN-9Gd2U-XvoqqNZuEAd16_eQ/view?usp=sharing",
             additional: "https://drive.google.com/drive/folders/1L9lCzQkdkrhD-oGP8_TXKuJDtkvJQRTm?usp=drive_link"
         }
     },
@@ -67,10 +67,10 @@ const lessonsData = [
         title: "6-dars",
         description: "Oltinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1piRnAyI8mjBwjqjvSepOwVtrqLz07nNm?usp=sharing",
+            theory: "https://drive.google.com/file/d/1_Vp3hYY7mbPKBjVaaY_I2Ih98b8mCiCP/view?usp=sharing",
             video: "https://youtu.be/eaPqTkbr5E8",
             tests: "https://drive.google.com/drive/folders/1Pfo162nQoKxJhshpV0VcFx123K4vEkij?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/1eSgjTp2xUpe_ZP9ghUTxyNe-Sz4elKdi?usp=sharing",
+            presentation: "https://drive.google.com/file/d/1tUhUEi0Iio-VE8ZSLX5PSHpW5dYQjzqK/view?usp=sharing",
             additional: "https://drive.google.com/drive/folders/1lgISl0-dEsB8HVpugUNp4KAGaFYMiz8V?usp=drive_link"
         }
     },
@@ -79,11 +79,11 @@ const lessonsData = [
         title: "7-dars",
         description: "Yettinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1OiInFortfyBBN3o1eY2Jba5G90mQSiHD?usp=sharing",
+            theory: "https://drive.google.com/file/d/1Xa1-iEzH5qRXp2KTknP17Am_L-rGtO-Z/view?usp=sharing",
             video: "https://youtu.be/0Bd4CNDymBo",
-            tests: "https://drive.google.com/drive/folders/1YGu4OaQMAKCKkD7wr6TCOQd4uf2XPwcZ?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/1I8iX-w4SO5-3NePzbKw3NSboK9wxHKxM?usp=sharing",
-            additional: "https://drive.google.com/drive/folders/1WyU961UpdgzGB3L_fJq5meYrqejJuziP?usp=drive_link"
+            tests: "https://drive.google.com/file/d/1tLYOAmMeUQwfHm7mKRn3tOYOBG3Gn5YC/view?usp=sharing",
+            presentation: "https://drive.google.com/file/d/1DyL0hjkQL2eFeE5Ev0433TC3E6xlXvW4/view?usp=sharing",
+            additional: "https://drive.google.com/file/d/1pMrfPE1ocLwszDyPDTPsLaxTG_wb7qj2/view?usp=sharing"
         }
     },
     {
@@ -91,10 +91,10 @@ const lessonsData = [
         title: "8-dars",
         description: "Sakkizinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1UMFedW0o7MOzJSXouv9GjjgkUd-vVeoi?usp=sharing",
+            theory: "https://drive.google.com/file/d/1bGx8qhRCmYCG8gD2oyhFNE-ke7wIsoD7/view?usp=sharing",
             video: "https://youtu.be/Fm0K1cSXfOM",
             tests: "https://drive.google.com/drive/folders/1841JXUbvN4I60ybGaLFs5vsn658O1f04?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/1UuzOyoTYNmNo9THM1hfGX5NUtED3sDgH?usp=sharing",
+            presentation: "https://drive.google.com/file/d/1NRAD9taFqvsOpMbgcbT34ljTo9t43s-R/view?usp=sharing",
             additional: "https://drive.google.com/drive/folders/1JSRsMdQwzo4lLuwLGbFDpy6bq8A7J0AK?usp=drive_link"
         }
     },
@@ -103,10 +103,10 @@ const lessonsData = [
         title: "9-dars",
         description: "To'qqizinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1a4bQTIxc2PtGXYsd8K19Q3Zt-b1uQvWA?usp=sharing",
+            theory: "https://drive.google.com/file/d/1a9k39k8XTB51uQy1etWfzGtvPMxAjRD3/view?usp=sharing",
             video: "https://youtu.be/mURZwapoMao",
             tests: "https://drive.google.com/drive/folders/1FrgQe0V0RsK3byHDW3xxxNa8_Tei35VR?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/1PvIj9gFh6zndnPK5Zou1gyQh_hlcz6PW?usp=sharing",
+            presentation: "https://drive.google.com/file/d/1nrwVYdJkGCeOab3wMqMnZ7obI6yk49Va/view?usp=sharing",
             additional: "https://drive.google.com/drive/folders/1dHbMSjFjGS-ofOIr8pOGNQIwWcfdO9j5?usp=drive_link"
         }
     },
@@ -115,11 +115,11 @@ const lessonsData = [
         title: "10-dars",
         description: "O'ninchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1WP9LxyZ6EKsVP66iSCHNN29MsXfiodyA?usp=sharing",
+            theory: "https://drive.google.com/file/d/1RKItlUJS5YEI4Ua4KAiTx0TrJEDCTb1y/view?usp=sharing",
             video: "https://youtu.be/5cqy_-E54Uw",
             tests: "https://drive.google.com/drive/folders/1O5pnBy1mjN4opyVfu5DypwBu0NGj5ruE?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/1KRoTGYWxsxRH2hUiGJzm9Buyf218gYQN?usp=sharing",
-            additional: "https://drive.google.com/drive/folders/1gjk0xZHqDjefCMGFA9sTFnbjw7LuTaFu?usp=drive_link"
+            presentation: "https://drive.google.com/file/d/118Kqb-VEJQW0Q26KxHU_ns0Bkwar0xWT/view?usp=sharing",
+            additional: "https://drive.google.com/file/d/1xXBRq7CS_kce8qJpFe3IfzmSqPSkXxMM/view?usp=sharing"
         }
     },
     {
@@ -127,7 +127,7 @@ const lessonsData = [
         title: "11-dars",
         description: "O'n birinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1nD6nh4noxkFuidOytDOxwflXxLA1lwU1?usp=sharing",
+            theory: "https://drive.google.com/file/d/1Wvpkyt5ljTltspsC94zNsNcus7VqH410/view?usp=sharing",
             video: "https://youtu.be/UOteVjEbyPU",
             tests: "https://drive.google.com/drive/folders/1a51bJfL3Z1bNd7X0S9ogWumj6Ifhutym?usp=drive_link",
             presentation: "https://drive.google.com/drive/folders/1seK2RGibRraMvrFOwyw7pJbvT3XCKH3d?usp=sharing",
@@ -139,10 +139,10 @@ const lessonsData = [
         title: "12-dars",
         description: "O'n ikkinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1WIsLfcWFjPoe34MfN1hX0bJ6IEDlgOfC?usp=sharing",
+            theory: "https://drive.google.com/file/d/17MGa6XJy6pCBr-R1bqDWQ56NWMEjAeZ3/view?usp=sharing",
             video: "https://youtu.be/KqMtP2BoaVQ",
             tests: "https://drive.google.com/drive/folders/1Te4s3gsYS-kFzdBc5_RiMOdSGZN_fNcZ?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/1zsxaFMZ9-3GW-_92Miauxtee3NVoI6R3?usp=sharing",
+            presentation: "https://drive.google.com/file/d/1vWB3uixi2RRy6bvtlDK9aGzuEZV1JEGA/view?usp=sharing",
             additional: "https://drive.google.com/drive/folders/17IZgLN9Mhds2bvBcXGOX5-dRcSoYqmTm?usp=drive_link"
         }
     },
@@ -151,7 +151,7 @@ const lessonsData = [
         title: "13-dars",
         description: "O'n uchinchi dars materiallari",
         materials: {
-            theory: "https://drive.google.com/drive/folders/1KYg7ixO_WjRHkKB_A9FBPUbN1RtwR6Lo?usp=sharing",
+            theory: "https://drive.google.com/file/d/1hOHjzX0jveNzj__VLH8H2nwYqxO-6jYd/view?usp=sharing",
             video: "https://youtu.be/dEyuHa4U3BY",
             tests: "#",
             presentation: "https://drive.google.com/drive/folders/1OfY7pyzRqc6ai0cpW_NCxuUMgpuNxXtt?usp=sharing",
@@ -167,7 +167,7 @@ const lessonsData = [
             video: "https://youtu.be/6TF9OtOcVQ0",
             tests: "https://drive.google.com/drive/folders/1DlVDLLmbCWv6JZsApxr2cnxr-ROgOXez?usp=drive_link",
             presentation: "https://drive.google.com/drive/folders/1CXFnW608hRxIjBQxqjpGDlfX2D_JqHAh?usp=sharing",
-            additional: "https://drive.google.com/drive/folders/12L0qgkvyoX2l7-D46_VN2LN_QXLswy1f?usp=drive_link"
+            additional: "https://drive.google.com/file/d/1f-I9t9A-B-hep57rCP46qjnNnRivSqOu/view?usp=sharing"
         }
     },
     {
@@ -178,7 +178,7 @@ const lessonsData = [
             theory: "https://drive.google.com/drive/folders/1OdlE2hvP32dF71BOqfuZjSrRTNibdUDZ?usp=sharing",
             video: "https://youtu.be/6ndC5mBlYZM",
             tests: "https://drive.google.com/drive/folders/153e93clq-cBh9gz4jIGR4D1nT-WRsu3x?usp=drive_link",
-            presentation: "https://drive.google.com/drive/folders/11nt3K02qdk_RZfm-6C-QEF2Y9m7g_qqb?usp=sharing",
+            presentation: "https://drive.google.com/file/d/1Sg55dqq77587Ch32s_jh4GTqPG0n0u7L/view?usp=sharing",
             additional: "https://drive.google.com/drive/folders/1uBhcsN1HPX6ccoABmN78yPArQZEf5tKZ?usp=drive_link"
         }
     }

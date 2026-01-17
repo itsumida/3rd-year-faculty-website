@@ -69,6 +69,12 @@ function openLesson(lessonId) {
     currentLesson = lessonsData.find(l => l.id === lessonId);
     if (!currentLesson) return;
 
+    // Track lesson view
+    trackEvent('lesson_view', {
+        lesson_id: lessonId,
+        lesson_title: currentLesson.title
+    });
+
     // Set modal content
     modalTitle.textContent = currentLesson.title;
 
@@ -127,9 +133,17 @@ function toggleLessonCompletion() {
         // Remove from completed
         const index = progress.indexOf(lessonId);
         progress.splice(index, 1);
+        trackEvent('lesson_uncomplete', {
+            lesson_id: lessonId,
+            lesson_title: currentLesson.title
+        });
     } else {
         // Add to completed
         progress.push(lessonId);
+        trackEvent('lesson_complete', {
+            lesson_id: lessonId,
+            lesson_title: currentLesson.title
+        });
     }
 
     saveProgress(progress);
@@ -175,6 +189,12 @@ function handleSearch(query) {
                lesson.id.toString().includes(searchTerm);
     });
 
+    // Track search
+    trackEvent('search', {
+        search_term: searchTerm,
+        results_count: filtered.length
+    });
+
     renderLessons(filtered);
 }
 
@@ -205,6 +225,13 @@ function switchSemester(semesterNum) {
     }
 }
 
+// Analytics Helper Function
+function trackEvent(eventName, eventParams = {}) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, eventParams);
+    }
+}
+
 // Setup Event Listeners
 function setupEventListeners() {
     // Search
@@ -222,6 +249,7 @@ function setupEventListeners() {
         tab.addEventListener('click', () => {
             const semester = parseInt(tab.dataset.semester);
             switchSemester(semester);
+            trackEvent('semester_switch', { semester: semester });
         });
     });
 
@@ -236,6 +264,57 @@ function setupEventListeners() {
 
     // Progress tracking
     markComplete.addEventListener('click', toggleLessonCompletion);
+
+    // Track material clicks
+    theoryLink.addEventListener('click', () => {
+        if (currentLesson) {
+            trackEvent('material_click', {
+                material_type: 'theory',
+                lesson_id: currentLesson.id,
+                lesson_title: currentLesson.title
+            });
+        }
+    });
+
+    videoLink.addEventListener('click', () => {
+        if (currentLesson) {
+            trackEvent('material_click', {
+                material_type: 'video',
+                lesson_id: currentLesson.id,
+                lesson_title: currentLesson.title
+            });
+        }
+    });
+
+    testsLink.addEventListener('click', () => {
+        if (currentLesson) {
+            trackEvent('material_click', {
+                material_type: 'tests',
+                lesson_id: currentLesson.id,
+                lesson_title: currentLesson.title
+            });
+        }
+    });
+
+    presentationLink.addEventListener('click', () => {
+        if (currentLesson) {
+            trackEvent('material_click', {
+                material_type: 'presentation',
+                lesson_id: currentLesson.id,
+                lesson_title: currentLesson.title
+            });
+        }
+    });
+
+    additionalLink.addEventListener('click', () => {
+        if (currentLesson) {
+            trackEvent('material_click', {
+                material_type: 'additional',
+                lesson_id: currentLesson.id,
+                lesson_title: currentLesson.title
+            });
+        }
+    });
 
     // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
